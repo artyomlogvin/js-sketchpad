@@ -9,9 +9,9 @@ function createGridSquare(size) {
 }
 
 function fillGrid() {
-  for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-      createGridSquare(16);
+  for (let i = 0; i < 25; i++) {
+    for (let j = 0; j < 25; j++) {
+      createGridSquare(25);
     }
   }
 }
