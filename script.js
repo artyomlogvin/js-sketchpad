@@ -8,12 +8,14 @@ function createGridSquare(size) {
   grid.appendChild(square);
 }
 
-function fillGrid() {
-  for (let i = 0; i < 25; i++) {
-    for (let j = 0; j < 25; j++) {
-      createGridSquare(25);
+function fillGrid(gridSideSize, squaresPerSide) {
+  const squareSize = gridSideSize / squaresPerSide;
+
+  for (let i = 0; i < squaresPerSide; i++) {
+    for (let j = 0; j < squaresPerSide; j++) {
+      createGridSquare(squareSize);
     }
   }
 }
 
-fillGrid();
+fillGrid(625, 16);
