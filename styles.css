@@ -3,5 +3,5 @@
     height: 625px;
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua;
+    border: 1px black solid;
 }

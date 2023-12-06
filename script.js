@@ -5,6 +5,8 @@ function createGridSquare(size) {
   square.style.width = size + 'px';
   square.style.height = size + 'px';
 
+  addHoverEffect(square);
+
   grid.appendChild(square);
 }
 
@@ -16,6 +18,16 @@ function fillGrid(gridSideSize, squaresPerSide) {
       createGridSquare(squareSize);
     }
   }
+}
+
+function addHoverEffect(element) {
+  element.addEventListener('mouseover', () => {
+    if (element.style.backgroundColor == 'black') {
+      element.style.backgroundColor = 'white';
+    } else {
+      element.style.backgroundColor = 'black';
+    }
+  });
 }
 
 fillGrid(625, 16);
