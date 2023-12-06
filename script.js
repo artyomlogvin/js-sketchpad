@@ -30,4 +30,11 @@ function addHoverEffect(element) {
   });
 }
 
+function removeGrid() {
+  squaresToBeRemoved = document.querySelectorAll('.grid-container div');
+  squaresToBeRemoved.forEach((square) => {
+    square.remove();
+  });
+}
+
 fillGrid(625, 16);
