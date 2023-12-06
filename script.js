@@ -37,4 +37,15 @@ function removeGrid() {
   });
 }
 
+function createGrid() {
+  let userDesiredSquares = 0;
+
+  while (
+    (userDesiredSquares <= 0 || userDesiredSquares > 100) &
+    (userDesiredSquares != null)
+  ) {
+    userDesiredSquares = prompt('Enter squares per side (no more than 100): ');
+  }
+}
+
 fillGrid(625, 16);
