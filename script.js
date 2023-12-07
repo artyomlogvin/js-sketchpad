@@ -56,7 +56,10 @@ function createGrid() {
     desiredSquares = prompt('Enter squares per side (no more than 100): ');
   }
 
-  fillGrid(gridTotalSize, desiredSquares);
+  if (desiredSquares != null) {
+    removeGrid();
+    fillGrid(gridTotalSize, desiredSquares);
+  }
 }
 
 const gridTotalSize = 625;
@@ -64,7 +67,6 @@ const gridTotalSize = 625;
 const newGridBtn = document.querySelector('.btn-new-grid');
 
 newGridBtn.addEventListener('click', () => {
-  removeGrid();
   createGrid();
 });
 
