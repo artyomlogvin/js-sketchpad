@@ -38,14 +38,25 @@ function removeGrid() {
 }
 
 function createGrid() {
-  let userDesiredSquares = 0;
+  let desiredSquares = 0;
 
   while (
-    (userDesiredSquares <= 0 || userDesiredSquares > 100) &
-    (userDesiredSquares != null)
+    (desiredSquares <= 0 || desiredSquares > 100) &
+    (desiredSquares != null)
   ) {
-    userDesiredSquares = prompt('Enter squares per side (no more than 100): ');
+    desiredSquares = prompt('Enter squares per side (no more than 100): ');
   }
+
+  fillGrid(gridTotalSize, desiredSquares);
 }
 
-fillGrid(625, 16);
+const gridTotalSize = 625;
+
+const newGridBtn = document.querySelector('.btn-new-grid');
+
+newGridBtn.addEventListener('click', () => {
+  removeGrid();
+  createGrid();
+});
+
+fillGrid(gridTotalSize, 16);
