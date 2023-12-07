@@ -20,11 +20,21 @@ function fillGrid(gridSideSize, squaresPerSide) {
   }
 }
 
+let blackeningMultiplier = 0;
+
+function getRandomColor() {
+  let blackening = 255 * blackeningMultiplier;
+
+  if (blackeningMultiplier != 1) blackeningMultiplier += 0.1;
+
+  return `rgb(${Math.random() * 256 + 10 - blackening}, ${
+    Math.random() * 256 + 10 - blackening
+  }, ${Math.random() * 256 + 10 - blackening})`;
+}
+
 function addHoverEffect(element) {
   element.addEventListener('mouseover', () => {
-    element.style.backgroundColor = `rgb(${Math.random() * 256}, ${
-      Math.random() * 256
-    }, ${Math.random() * 256})`;
+    element.style.backgroundColor = getRandomColor();
   });
 }
 
@@ -37,6 +47,7 @@ function removeGrid() {
 
 function createGrid() {
   let desiredSquares = 0;
+  blackeningMultiplier = 0;
 
   while (
     (desiredSquares <= 0 || desiredSquares > 100) &
