@@ -22,11 +22,9 @@ function fillGrid(gridSideSize, squaresPerSide) {
 
 function addHoverEffect(element) {
   element.addEventListener('mouseover', () => {
-    if (element.style.backgroundColor == 'black') {
-      element.style.backgroundColor = 'white';
-    } else {
-      element.style.backgroundColor = 'black';
-    }
+    element.style.backgroundColor = `rgb(${Math.random() * 256}, ${
+      Math.random() * 256
+    }, ${Math.random() * 256})`;
   });
 }
 
