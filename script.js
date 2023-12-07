@@ -25,7 +25,7 @@ let blackeningMultiplier = 0;
 function getRandomColor() {
   let blackening = 255 * blackeningMultiplier;
 
-  if (blackeningMultiplier != 1) blackeningMultiplier += 0.1;
+  if (blackeningMultiplier < 1) blackeningMultiplier += 0.1;
 
   return `rgb(${Math.random() * 256 + 10 - blackening}, ${
     Math.random() * 256 + 10 - blackening
